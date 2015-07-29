@@ -6,6 +6,8 @@ PHQ9 Questionnaire
 To run the application clone it locally, install the dependencies, and then
 start the webpack dev server.
 
+Note: Node must be installed to run the application.
+
 ```
 git clone http://github.com/fortruce/phq9.git
 npm install
@@ -13,6 +15,15 @@ npm start
 ```
 
 Then, browser to `http://localhost:3000` to see the application.
+
+If you would rather not run the webpack dev server, then you can generate
+the production files and serve them from another server.
+
+```
+webpack -p
+cd dist/
+python -m SimpleHTTPServer 3000
+```
 
 ## Design
 
@@ -34,7 +45,7 @@ however, I would normally store such data in a Flux based store.
 The `Question` component is a pure component used to render each question and
 encapsulate the show/hide of the options.
 
-To streamling the quiz taking process on smaller devices, I opted to initially
+To streamline the quiz taking process on smaller devices, I opted to initially
 hide the options for each question. The options only show for the next unanswered
 question, but they can be toggled easily by clicking on a question. The purpose
 was to keep the clutter down to a minimum.
