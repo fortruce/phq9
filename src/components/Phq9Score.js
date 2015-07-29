@@ -1,22 +1,6 @@
 import React from 'react';
 import Recommendations from './Recommendations';
 
-// Translate the score from the numerical form to the corresponding severity level.
-function translateScore(num) {
-  if (num >= 0 && num <= 4)
-    return 'none';
-  else if (num >= 5 && num <= 9)
-    return 'mild';
-  else if (num >= 10 && num <= 14)
-    return 'moderate';
-  else if (num >= 15 && num <= 19)
-    return 'moderately_severe';
-  else if (num >= 20 && num <= 27)
-    return 'severe';
-  else
-    return 'unknown';
-}
-
 export default class Phq9Score extends React.Component {
   render() {
     // determine if a recommendation is necessary
