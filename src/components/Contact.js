@@ -10,7 +10,9 @@ export default class Contact extends React.Component {
           display: 'block',
           margin: '0 auto'
         }} src={picture} />
-        <h2>Thank you for contacting {name}!</h2>
+        <h2 style={{
+          textAlign: 'center'
+        }}>Thank you for contacting {name}!</h2>
       </div>
     );
   }

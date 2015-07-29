@@ -16,11 +16,15 @@ export default class Question extends React.Component {
     }
   }
   render() {
+    // show indicates whether or not the select options should be shown
+    // for the question
     const show = this.state.hide && !this.props.show;
     return (
       <div style={{
         margin: '20px 0'
       }}>
+
+    { /* toggle the show of the options when the question is clicked */}
         <p onClick={() => {
           this.setState({hide: !this.state.hide})
         }}>
@@ -28,6 +32,9 @@ export default class Question extends React.Component {
           { this.props.q }
           { this.props.selected !== -1 ? ' \u2705' : '' }
         </p>
+
+    { /* when a selection is chosen autotically hide the choices,
+        and send the choice up to the parent component thru callback */ }
         <select style={{
           display: show ? 'none' : 'block',
           margin: '0 0 0 20px',
@@ -44,6 +51,8 @@ export default class Question extends React.Component {
                   this.setState({ hide: true });
                   this.props.onSelect(select);
                 }}>
+
+      { /* generate the options for the questions */ }
           { options.map((opt, i) => {
             return <option value={i-1}
                            style={{

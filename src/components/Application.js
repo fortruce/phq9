@@ -2,6 +2,8 @@ import React from 'react';
 
 export default class Application extends React.Component {
   render() {
+    // render some basic styling and a simple header bar for consistent
+    // styling across pages
     return (
       <div>
         <div style={{
@@ -25,7 +27,7 @@ export default class Application extends React.Component {
         </div>
         <div className="container"
             style={{
-              marginTop: '60px',
+              marginTop: '70px',
               marginBottom: '40px'
             }}>
           { this.props.children }
